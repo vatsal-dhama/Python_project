@@ -7,4 +7,6 @@ pip install bs4
 
 pip install lxml
 
+pip install pandas
+
 (if pip doesnt work then try pip3)
