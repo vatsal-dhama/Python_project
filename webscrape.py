@@ -5,6 +5,10 @@ from urllib.request import urlopen as ureq
 
 import requests
 
+import pandas as pd
+
+
+
 class CovidData():
 
     def __init__(self,country) -> None:
@@ -73,12 +77,33 @@ class CovidData():
         return self.getdata(3)
 
 
+class Population:
+
+    def __init__(self,country) -> None:
+
+        self.country=country.lower().title()
+
+        self.pop_df = pd.read_csv("population_by_country_2020.csv")
+        # Taken from https://www.kaggle.com/tanuprabhu/population-by-country-2020
+    
+    def get_population(self):
+
+        try:
+
+            pop= self.pop_df.loc[self.pop_df["Country (or dependency)"]==self.country]
+            return int(pop["Population (2020)"])
+
+        except:
+
+            raise(Exception("Invalid country name"))
+
+        
 
 
 if __name__=="__main__":
 
     try:
-        d1=CovidData("india")
+        d1=CovidData("us")
         print(d1.last_update())
         print("Total Coronavirus cases:",d1.total_cases())
         print("Deaths:",d1.deaths())
@@ -89,6 +114,15 @@ if __name__=="__main__":
         print("List of  cumulative deaths daywise:",d1.deaths_data())
     except Exception as t:
         print(t)
+
+    try:
+
+        p= Population("finland")
+        print(p.get_population())
+    except Exception as e:
+        print(e)
+    
+
     
 
 
