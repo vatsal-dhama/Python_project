@@ -1,1 +1,12 @@
 guys please enter your prerequisites here, like installing your dependent libraries. tkinter is prerequired so no need!
+
+
+pip install bs4
+
+pip install lxml
+
+pip install pandas
+
+pip install requests
+
+(if pip doesnt work then try pip3)
