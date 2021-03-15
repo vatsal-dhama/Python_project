@@ -9,4 +9,6 @@ pip install lxml
 
 pip install pandas
 
+pip install requests
+
 (if pip doesnt work then try pip3)
