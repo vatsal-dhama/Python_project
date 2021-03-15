@@ -1,17 +1,23 @@
 
 from bs4 import BeautifulSoup as soup
 
-import matplotlib.pyplot as plt
+from urllib.request import urlopen as ureq
+
+from matplotlib import pyplot as plt
 
 from matplotlib import dates as m_dates
 
 import numpy as np
 
+import plotting as plot
+
 from datetime import date, timedelta  
 
-from urllib.request import urlopen as ureq
-
 import requests
+
+import pandas as pd
+
+ini = date(2020,2,15)  
 
 class CovidData():
 
@@ -80,36 +86,71 @@ class CovidData():
 
         return self.getdata(3)
 
-ini = date(2020,2,15)  
- 
+
+class Population:
+
+    def __init__(self,country) -> None:
+
+        self.country=country.lower().title()
+
+        self.pop_df = pd.read_csv("population_by_country_2020.csv")
+        # Taken from https://www.kaggle.com/tanuprabhu/population-by-country-2020
+    
+    def get_population(self):
+
+        try:
+
+            pop= self.pop_df.loc[self.pop_df["Country (or dependency)"]==self.country]
+            return int(pop["Population (2020)"])
+
+        except:
+
+            raise(Exception("Invalid country name"))
+
+        
+
 
 if __name__=="__main__":
 
     try:
-        d1=CovidData("us")
+        print("Enter Country Name: ")
+        name = input()
+        d1=CovidData(name)
         print(d1.last_update())
         print("Total Coronavirus cases:",d1.total_cases())
         print("Deaths:",d1.deaths())
         print("Recovered:",d1.recovered())
-        print(len(d1.total_case_data()))
-        print(len(d1.daily_new_case_data()))
-        print(len(d1.active_case_data()))
-        print(len(d1.deaths_data()))
-        l = [] 
-        for i in range(len(d1.daily_new_case_data())):
-            l.append((date((ini + timedelta(days = i)).year,(ini + timedelta(days = i)).month,(ini + timedelta(days = i)).day)))
-        #print("Dates",lst)
-        #plt.plot(range(len(d1.daily_new_case_data())),d1.daily_new_case_data())
-        plt.plot(l,d1.daily_new_case_data(),'y')
-        lst = [] 
-        for i in range(len(d1.total_case_data())):
-            lst.append((date((ini + timedelta(days = i)).year,(ini + timedelta(days = i)).month,(ini + timedelta(days = i)).day)))
-        plt.plot(lst,d1.total_case_data(),'r')
-        plt.show()
         #print("List of  cumulative cases daywise",d1.total_case_data())
         #print("List of new daily cases:",d1.daily_new_case_data())
         #print("List of active cases daywise:",d1.active_case_data())
         #print("List of  cumulative deaths daywise:",d1.deaths_data())
+        print("Enter:\n1 - Cumlative cases Daywise\n2 - New Daily Cases\n3 - Active Cases\n4 - Deaths")
+        i = int(input(""))
+        print("Enter the color of the graph\nr - red\no - orange\ny - yellow\nb - blue\ng - green")
+        c = str(input())
+        if (i == 1):
+            plot.plotweb(list(d1.total_case_data),name,c)
+        elif (i == 2):
+            plot.plotweb(list(d1.daily_new_case_data()),name,c)
+        elif (i == 3):
+            plot.plotweb(list(d1.active_case_data()),name,c)
+        elif (i == 4):
+            plot.plotweb(list(d1.deaths_data()),name,c)
+
+        
     except Exception as t:
         print(t)
 
+    try:
+
+        p= Population("finland")
+        print(p.get_population())
+    except Exception as e:
+        print(e)
+    
+
+    
+
+
+
+        
