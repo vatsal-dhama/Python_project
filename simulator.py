@@ -17,7 +17,7 @@ class Person():
     
     def wearMask(self):
         self.mask = True
-        self.contagiousness /= 2
+        self.contagiousness /= 1.5
 
 def initiate_simulation(population,total_days,percentage_immuned,starting_infectors,contagiousness,average_friends,recovery_days,mask_day,lockdown_day,lockdown_days,strict):
     
@@ -66,7 +66,7 @@ def initiate_simulation(population,total_days,percentage_immuned,starting_infect
                         if(strict == 1):
                             
                             if(i.mask == True):
-                                    i.contagiousness *= 2
+                                    i.contagiousness *= 1.5
                                     i.mask = False
 
                             i.wearMask()
@@ -74,7 +74,7 @@ def initiate_simulation(population,total_days,percentage_immuned,starting_infect
                         else:
                             
                             if(i.mask == True):
-                                    i.contagiousness *= 2
+                                    i.contagiousness *= 1.5
                                     i.mask = False
 
                             if(random.randint(0,100) <= 75): # assuming 75% chance that the person will wear mask 
@@ -87,7 +87,7 @@ def initiate_simulation(population,total_days,percentage_immuned,starting_infect
                     if ((People_List[j].contagiousness == 0) and (People_List[j].immune == False)):
                         
                         if(People_List[j].mask == True):
-                            if(random.randint(0,100)<i.contagiousness/2):
+                            if(random.randint(0,100)<i.contagiousness/1.5):
                                 People_List[j].contagiousness = round(norm.rvs(size = 1,loc = contagiousness,scale = 1.5)[0])
                                 People_List[j].mask = False
                         else:
