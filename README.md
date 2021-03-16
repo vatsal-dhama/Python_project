@@ -11,6 +11,6 @@ pip install pandas
 
 pip install requests
 
-pip install scipy
+pip install matplotlib
 
 (if pip doesnt work then try pip3)

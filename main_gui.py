@@ -1,19 +1,16 @@
 import tkinter as tk
 from tkinter import messagebox
 import simulator as sim
-import manish as plot
+import plotting as plot
 
 # Create the root (base) window where all widgets go
 root = tk.Tk()   
-
-# Transparent background
-root.wm_attributes("-alpha",1)
 
 # Title of Program
 root.title("Simulating a Pandemic")
 
 # Size of Program
-root.geometry("800x720")
+root.geometry("1280x720")
 
 # Menubar created
 menubar = tk.Menu(root)
@@ -22,7 +19,6 @@ menubar = tk.Menu(root)
 icon = tk.PhotoImage(file = "image.png")
 background_image = tk.Label(root,image = icon)
 background_image.place(x =-3,y =-3)
-
 '''
 Declaring string variables
 '''
@@ -56,44 +52,41 @@ def credits_msg():
 # Input taking
 def start_sim():
     l=(sim.initiate_simulation(population.get(),total_days.get(),percentage_immuned.get(),starting_infectors.get(),contagiousness.get(),average_friends.get(),recovery_days.get(),mask_day.get(),lockdown_day.get(),lockdown_days.get()))
-    plot.plotweb(l,"simulation","r")
-
+    plot.plotsim(l,"r")
 '''
 INPUTS
 '''
-L1 = tk.Label(root, text="Population:",font=("Arial Bold",30),bg="blue")
+#population,total_days,percentage_immuned,starting_infectors,contagiousness,average_friends,recovery_days,mask_day,lockdown_day,lockdown_days
+L1 = tk.Label(root, text="Enter Population:"  )
 E1 = tk.Entry(root,textvariable=population,bd=5)
 
-L2 = tk.Label(root, text="Total Days:",font=("Arial Bold",30),bg="red")
+L2 = tk.Label(root, text="Enter Total Days:")
 E2 = tk.Entry(root,textvariable=total_days, bd =5)
 
-L3 = tk.Label(root, text="Percentage immuned:",font=("Arial Bold",30),bg="blue")
+L3 = tk.Label(root, text="Enter Percentage immuned:")
 E3 = tk.Entry(root,textvariable=percentage_immuned, bd =5)
 
-L4 = tk.Label(root, text="Starting infectors:",font=("Arial Bold",30),bg="red")
+L4 = tk.Label(root, text="Enter Starting infectors:")
 E4 = tk.Entry(root,textvariable=starting_infectors, bd =5)
 
-L5 = tk.Label(root, text="Contagiousness:",font=("Arial Bold",30),bg="blue")
+L5 = tk.Label(root, text="Enter Contagiousness:")
 E5 = tk.Entry(root,textvariable=contagiousness, bd =5)
 
-L6 = tk.Label(root, text="Average friends:",font=("Arial Bold",30),bg="red")
+L6 = tk.Label(root, text="Enter Average friends:")
 E6 = tk.Entry(root,textvariable=average_friends, bd =5)
 
-L7 = tk.Label(root, text="Recovery days:",font=("Arial Bold",30),bg="blue")
+L7 = tk.Label(root, text="Enter Recovery days:")
 E7 = tk.Entry(root, textvariable=recovery_days,bd =5)
 
-L8 = tk.Label(root, text="Mask day:",font=("Arial Bold",30),bg="red")
+L8 = tk.Label(root, text="Enter Mask day:")
 E8 = tk.Entry(root, textvariable=mask_day,bd =5)
 
-L9 = tk.Label(root, text="Lockdown start day:",font=("Arial Bold",30),bg="blue")
+L9 = tk.Label(root, text="Enter Lockdown day:")
 E9 = tk.Entry(root, textvariable=lockdown_day,bd =5)
 
-L10 = tk.Label(root, text="Lockdown days:",font=("Arial Bold",30),bg="red")
+L10 = tk.Label(root, text="Enter Lockdown days:")
 E10 = tk.Entry(root,textvariable=lockdown_days, bd =5)
 
-'''
-BUTTONS
-'''
 # Start sim button
 start_simulator = tk.Button(root,text="Start Simulator",command=start_sim,font=("Arial Bold",50))
 
@@ -108,6 +101,7 @@ exit_button = tk.Button(root, text = "Exit", command = exit_button_pushed , font
 
 '''
 ARRANGEMENT
+
 '''
 L1.grid(row=0,column=0)
 E1.grid(row=0,column=1)
