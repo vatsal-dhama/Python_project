@@ -11,4 +11,6 @@ pip install pandas
 
 pip install requests
 
+pip install scipy
+
 (if pip doesnt work then try pip3)
