@@ -31,7 +31,7 @@ def plotweb(data,name,ch):
         p = plt.plot(dates[:i],data[:i],ch,label = name,linewidth=1)
         # we iterate through each point to be plotted one after the other giving a animation effect 
 
-    animator = ani.FuncAnimation(fig, buildmebarchart, interval = 10)
+    animator = ani.FuncAnimation(fig, buildmebarchart, interval = 5)
         # interval between each point being plotted is 10ms
 
     plt.show()
@@ -53,8 +53,8 @@ def plotsim(data,ch):
     t = 20*1000
     i = t/l 
     # making the time interval between each point being plotted change such that any simulation user asks for takes the same amount of time
-    def animation(i = int):
-        p = plt.plot(dates[:1],data[:1],ch,linewidth=1)
+    def animation(j = int):
+        p = plt.plot(dates[:j],data[:j],ch,linewidth=1)
     
     animator = ani.FuncAnimation(fig,animation,interval = i)
 
