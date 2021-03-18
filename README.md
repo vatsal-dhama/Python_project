@@ -13,4 +13,6 @@ pip install requests
 
 pip install matplotlib
 
+pip install plotting
+
 (if pip doesnt work then try pip3)
