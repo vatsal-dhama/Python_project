@@ -49,7 +49,7 @@ def helpmsg():
 
 # Credits message command
 def credits_msg():
-    tk.messagebox.showinfo("credits","gui creater OP🔥")
+    tk.messagebox.showinfo("credits","GUI creator - Vatsal Dhama\nSimulation by Rachit Agarwal\nWebscrapping by Sooraj\nPLotting by Manish Reddy")
 
 # Input taking
 def start_sim():
