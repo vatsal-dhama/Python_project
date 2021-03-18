@@ -15,4 +15,6 @@ pip install matplotlib
 
 pip install plotting
 
+pip install scipy
+
 (if pip doesnt work then try pip3)
