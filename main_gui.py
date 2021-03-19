@@ -153,15 +153,22 @@ def automatic_sim_window():
     '''
     def start_sim():
 
-        d1=webs.CovidData(country.get())
-        if (type_of_graph.get() == "Cumlative cases Daywise"):
-            plot.plotweb(list(d1.total_case_data()),country.get(),'c')
-        elif (type_of_graph.get() == "New Daily Cases"):
-            plot.plotweb(list(d1.daily_new_case_data()),country.get(),'c')
-        elif (type_of_graph.get() == "Active Cases"):
-            plot.plotweb(list(d1.active_case_data()),country.get(),'c')
-        elif (type_of_graph.get() == "Deaths"):
-            plot.plotweb(list(d1.deaths_data()),country.get(),'c')
+        try:
+
+
+            d1=webs.CovidData(country.get())
+            if (type_of_graph.get() == "Cumlative cases Daywise"):
+                plot.plotweb(list(d1.total_case_data()),country.get(),'c')
+            elif (type_of_graph.get() == "New Daily Cases"):
+                plot.plotweb(list(d1.daily_new_case_data()),country.get(),'c')
+            elif (type_of_graph.get() == "Active Cases"):
+                plot.plotweb(list(d1.active_case_data()),country.get(),'c')
+            elif (type_of_graph.get() == "Deaths"):
+                plot.plotweb(list(d1.deaths_data()),country.get(),'c')
+
+        except Exception as e:
+            # print(e)
+            messagebox.showinfo("Error", e)
 
     '''
     Inputs
