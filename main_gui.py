@@ -69,7 +69,7 @@ def custom_sim_window():
 
     # Help message command
     def helpmsg():
-        tk.messagebox.showinfo("userguide","Enter the inputs.\nThe strictness checkbox if ticked, indicates that the people are following the guidelines strictly and we see the plot of the most ideal situation,\notherwise there is some randomness in wearing masks and obeying lockdown as we all do :) \nClick the start simulator button to plot the graph.")
+        tk.messagebox.showinfo("userguide","Enter the inputs.\nEnter 0 in Lockdown Days, Lockdown Start Day and Masks Start Day for no restrictions on people, else enter the appropriate day.\nThe strictness checkbox if ticked, indicates that the people are following the guidelines strictly and we see the plot of the most ideal situation,\notherwise there is some randomness in wearing masks and obeying lockdown as we all do :) \nClick the start simulator button to plot the graph.")
 
     # Input taking
     def start_sim():
@@ -100,7 +100,7 @@ def custom_sim_window():
     L7 = tk.Label(cutom_sim, text="Recovery days:",font=("Arial Bold",30),bg="blue")
     E7 = tk.Entry(cutom_sim, textvariable=recovery_days,bd =5)
 
-    L8 = tk.Label(cutom_sim, text="Mask day:",font=("Arial Bold",30),bg="red")
+    L8 = tk.Label(cutom_sim, text="Masks start day:",font=("Arial Bold",30),bg="red")
     E8 = tk.Entry(cutom_sim, textvariable=mask_day,bd =5)
 
     L9 = tk.Label(cutom_sim, text="Lockdown start day:",font=("Arial Bold",30),bg="blue")
