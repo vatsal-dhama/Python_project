@@ -151,11 +151,12 @@ def automatic_sim_window():
     '''
     Fuctions
     '''
+    def help_button():
+        tk.messagebox.showinfo("help","Sooraj enter a user guide here!")
+    
     def start_sim():
 
         try:
-
-
             d1=webs.CovidData(country.get())
             if (type_of_graph.get() == "Cumlative cases Daywise"):
                 plot.plotweb(list(d1.total_case_data()),country.get(),'c')
@@ -183,7 +184,7 @@ def automatic_sim_window():
     Buttons
     '''
     B1 = tk.Button(auto_sim,text="Start\nSimulator",font=("Arial Bold",30),command=start_sim)
-
+    B2 = tk.Button(auto_sim,text="Help",font=("Arial Bold",30),command=help_button)
     '''
     Arrangement
     '''
@@ -192,8 +193,8 @@ def automatic_sim_window():
     L2.grid(row=1,column=0)
     C1.grid(row=1,column=1)
     B1.grid(row=2,column=0)
-    #try:
-    #    data=webs.CovidData(country.get())
+    B2.grid(row=2,column=1)
+
     auto_sim.mainloop()
 
 B1 = tk.Button(root,text ="Custom \nSimulation",command = custom_sim_window,font=("Arial Bold",100))
