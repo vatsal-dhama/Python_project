@@ -228,7 +228,7 @@ B4 = tk.Button(root,text ="Exit",command=root.destroy,font=("Arial Bold",100))
 
 B1.place(x=20,y=100)
 B2.place(x=760,y=100)
-B3.place(x=0,y=200)
-B4.place(x=100,y=200)
+B3.place(x=150,y=525)
+B4.place(x=1000,y=525)
 # Start the event loop
 root.mainloop()
