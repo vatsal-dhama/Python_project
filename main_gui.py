@@ -69,7 +69,7 @@ def custom_sim_window():
 
     # Help message command
     def helpmsg():
-        tk.messagebox.showinfo("userguide","Enter the inputs.\n The strictness checkbox if ticked, indicates that the people are following the guidelines strictly and we see the plot of the most ideal situation,\n otherwise there is some randomness in wearing masks and obeying lockdown as we all do :) \nClick the start simulator button to plot the graph.")
+        tk.messagebox.showinfo("userguide","Enter the inputs.\nThe strictness checkbox if ticked, indicates that the people are following the guidelines strictly and we see the plot of the most ideal situation,\notherwise there is some randomness in wearing masks and obeying lockdown as we all do :) \nClick the start simulator button to plot the graph.")
 
     # Input taking
     def start_sim():
@@ -216,19 +216,19 @@ def automatic_sim_window():
     auto_sim.mainloop()
 
 def credits_button():
-    messagebox.showinfo("credits","GUI integration - Vatsal dhama\n")
+    messagebox.showinfo("credits","GUI integration - Vatsal dhama\nCustom simulation - Rachit agarwal\nCorona update - Sooraj sathish\nPlotting - Manish reddy")
 
 '''
 Buttons
 '''
 B1 = tk.Button(root,text ="Custom \nSimulation",command = custom_sim_window,font=("Arial Bold",100))
-B2 = tk.Button(root,text = "Corona\n   Update   ",command = automatic_sim_window,font=("Arial Bold",100))
+B2 = tk.Button(root,text = "Corona\nupdate",command = automatic_sim_window,font=("Arial Bold",100))
 B3 = tk.Button(root,text ="Credits",command=credits_button,font=("Arial Bold",100))
 B4 = tk.Button(root,text ="Exit",command=root.destroy,font=("Arial Bold",100))
 
 B1.place(x=20,y=100)
 B2.place(x=760,y=100)
-B3.place(x=150,y=525)
-B4.place(x=1000,y=525)
+B3.place(x=0,y=200)
+B4.place(x=100,y=200)
 # Start the event loop
 root.mainloop()
