@@ -152,7 +152,7 @@ def automatic_sim_window():
     Fuctions
     '''
     def help_button():
-        tk.messagebox.showinfo("help","In the text box provided any country name can be given.After that 1 of the graphs from the dropdown menu should be selected.Then click on the start simulation button to view the graph")
+        tk.messagebox.showinfo("help","In the text box provided any country name can be given.After that one of the graphs from the dropdown menu should be selected.Then click on the start simulation button to view the graph")
     
     def start_sim():
 
