@@ -50,7 +50,7 @@ def plotsim(data,ch):
     plt.subplots_adjust(bottom = 0.2, top = 0.9)
 
     l = len(data)
-    t = 10*1000
+    t = 5*1000
     i = t/l 
     # making the time interval between each point being plotted change such that any simulation user asks for takes the same amount of time
     def animation(j = int):
