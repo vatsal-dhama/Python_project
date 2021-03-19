@@ -218,16 +218,13 @@ def automatic_sim_window():
 def credits_button():
     messagebox.showinfo("credits","GUI integration - Vatsal dhama\n")
 
-def exit_button():
-    pass
-
 '''
 Buttons
 '''
 B1 = tk.Button(root,text ="Custom \nSimulation",command = custom_sim_window,font=("Arial Bold",100))
 B2 = tk.Button(root,text = "Corona\n   Update   ",command = automatic_sim_window,font=("Arial Bold",100))
 B3 = tk.Button(root,text ="Credits",command=credits_button,font=("Arial Bold",100))
-B4 = tk.Button(root,text ="Exit",command=exit_button,font=("Arial Bold",100))
+B4 = tk.Button(root,text ="Exit",command=root.destroy,font=("Arial Bold",100))
 
 B1.place(x=20,y=100)
 B2.place(x=760,y=100)
