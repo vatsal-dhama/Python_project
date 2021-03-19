@@ -216,13 +216,13 @@ def automatic_sim_window():
     auto_sim.mainloop()
 
 def credits_button():
-    messagebox.showinfo("credits","GUI integration - Vatsal dhama\nCustom simulation - Rachit agarwal\nCorona update - Sooraj sathish\nPlotting - Manish reddy")
+    messagebox.showinfo("credits","GUI integration - Vatsal Dhama\nCustom simulation - Rachit Agrawal\nCorona update - Sooraj Sathish\nPlotting - Manish Reddy")
 
 '''
 Buttons
 '''
 B1 = tk.Button(root,text ="Custom \nSimulation",command = custom_sim_window,font=("Arial Bold",100))
-B2 = tk.Button(root,text = "Corona\nupdate",command = automatic_sim_window,font=("Arial Bold",100))
+B2 = tk.Button(root,text = "Corona\n   Update   ",command = automatic_sim_window,font=("Arial Bold",100))
 B3 = tk.Button(root,text ="Credits",command=credits_button,font=("Arial Bold",100))
 B4 = tk.Button(root,text ="Exit",command=root.destroy,font=("Arial Bold",100))
 
