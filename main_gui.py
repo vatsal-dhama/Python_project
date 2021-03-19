@@ -33,6 +33,10 @@ colours = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
 		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF']
 
+
+'''
+Functions
+'''
 def custom_sim_window():
     cutom_sim = tk.Toplevel(root)
     
@@ -211,11 +215,23 @@ def automatic_sim_window():
 
     auto_sim.mainloop()
 
-B1 = tk.Button(root,text ="Custom \nSimulation",command = custom_sim_window,font=("Arial Bold",100))
+def credits_button():
+    messagebox.showinfo("credits","GUI integration - Vatsal dhama\n")
 
-B2 = tk.Button(root,text = "Corona \nSimulation",command = automatic_sim_window,font=("Arial Bold",100))
+def exit_button():
+    pass
+
+'''
+Buttons
+'''
+B1 = tk.Button(root,text ="Custom \nSimulation",command = custom_sim_window,font=("Arial Bold",100))
+B2 = tk.Button(root,text = "Corona\nupdate",command = automatic_sim_window,font=("Arial Bold",100))
+B3 = tk.Button(root,text ="Credits",command=credits_button,font=("Arial Bold",100))
+B4 = tk.Button(root,text ="Exit",command=exit_button,font=("Arial Bold",100))
 
 B1.place(x=20,y=100)
 B2.place(x=760,y=100)
+B3.place(x=0,y=200)
+B4.place(x=100,y=200)
 # Start the event loop
 root.mainloop()
