@@ -51,7 +51,7 @@ def custom_sim_window():
 
     # Help message command
     def helpmsg():
-        tk.messagebox.showinfo("userguide","this is user guide. Enter the inputs. The strictness checkbox if ticked, indicates that the people are following the guidelines strictly, otherwise there is some randomness in wearing masks and obeying lockdown as we all have :) Click the start simulator button to plot the graph.")
+        tk.messagebox.showinfo("userguide","Enter the inputs.\n The strictness checkbox if ticked, indicates that the people are following the guidelines strictly and we see the plot of the most ideal situation,\n otherwise there is some randomness in wearing masks and obeying lockdown as we all do :) \nClick the start simulator button to plot the graph.")
 
     # Input taking
     def start_sim():
